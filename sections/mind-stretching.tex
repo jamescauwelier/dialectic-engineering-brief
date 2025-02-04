@@ -1,0 +1,107 @@
+\section{Mind Stretching: a brief example}
+
+This section illustrates a potential example of mind-opening dialogue.
+The case is real, but the dialogue is shortened for practical reasons.
+
+\subsection{Drafting legal documents}
+
+The client is a lawyer wishing to automate the drafting of legal documents, such as contracts.
+A rule-engine is built, which can decide to draft a piece of content or decide to query for more information.
+The rule-engine can be edited on a CMS where a rule consists of a matching condition, and an action.
+Rules are ordered by importance and the order of appearance in the document.
+
+\subsection{An inflexible rule engine}
+
+The challenge presented by our client is that the rule engine is inflexible and full of bugs.
+When the lawyer notices a problem with a document, and reviews the rule engine, they often find it challenging to
+confirm whether the rule engine has a bug or whether the rules are incorrect.
+The complexity of putting all these rules together quickly got out-of-hand, leading to a pile of bug reports that end
+up being misconfigurations the engineer is unable to charge for.
+The end result is that the lawyer needs the engineer to listen to the requirement in order to verify the rule engine
+and make adaptations.
+This defeats the purpose of the software, which was to put control in the hands of the lawyer to direct a drafting
+engine that saves them time and money.
+
+\subsection{A mind stretching dialogue}
+
+Here's the mind-opening dialogue between our client lawyer and software engineer.
+A 3rd party, the facilitator, is asking mind-opening questions.
+
+\begin{dialogue}
+    \speak{Lawyer} We're seeing the same problem again. According to rules x and y, this paragraph shouldn't have
+    been added. Additionally, further down the document, a critical piece is missing.
+    \speak{Engineer} Yeah, but if you consider these rules, the engine is behaving as expected.
+    \speak{Lawyer} The case doesn't apply here, because my client is a senior citizen and over 65 years old.
+    \speak{Engineer} The system doesn't have that data. And so obviously, it can't act on it.
+    \speak{Lawyer} Then, question should've been available in the system.
+    \speak{Engineer} I can add it now, but I couldn't have known to add it unless you briefed me on it.
+    \speak{Lawyer} But it's impossible for us to know all the questions we need to ask.
+    \speak{Engineer} But why is that? You just told me the question that was missing here.
+    \speak{Lawyer} Yes, but I only knew it was missing when being presented with an error in the system's outputs.
+    There's a lot of similar questions and conditions under which we should ask them. The law also changes and so the
+    system needs to change with it.
+    \speak{FACILITATOR} It sounds like the current system is unstable because the outputs are incorrect?
+    \speak{Lawyer} Yes
+    \speak{FACILITATOR} And these instabilities are either a newly exposed incompleteness or a change in legal
+    requirements?
+    \speak{Lawyer} Yes
+    \speak{Engineer} And they interrupt my tasks preventing me to do any real feature development.
+    \speak{FACILITATOR} I see. And we don't have a way of knowing which instabilities will surface in the system
+    tomorrow, because we don't know how the law will change or what unique use cases will present them to your lawyer
+    practice?
+    \speak{Lawyer} Unfortunately correct.
+    \speak{FACILITATOR} I see. But one stability is that we know they will happen, right? We know there will be
+    further incompleteness and law change?
+    \speak{Lawyer} I fear so, yes.
+    \speak{FACILITATOR} It appears to me as though these instabilities are an active driver through which the
+    software evolves?
+    \speak{Lawyer} Yes. Unfortunately, the software requirements can't be fully defined and I fear the automation
+    attempt is doomed.
+    \speak{FACILITATOR} How would you describe your original automation attempt or set of requirements?
+    \speak{Lawyer} To automate the drafting of legal documents according to a set of rules.
+    \speak{FACILITATOR} And what was really needed was to automate the drafting of legal documents according to a set
+    of known and unknown rules? So the need to cater to unknown rules was not initially understood.
+    \speak{Lawyer} Yeah, I guess so. But how would you do that?
+    \speak{FACILITATOR} How are you doing it today?
+    \speak{Laywer} We flag an issue to the engineer.
+    \speak{Engineer} And then I need to dig into the rule engine, add questions, and different rules to reconfigure
+    the system, after which we run the document again to test it.
+    \speak{FACILITATOR} It appears to me that failure needs to be an inherent part of the system design where
+    flagging them automatically reconfigures the system. And they aren't huge issues, but rather sources of truth the
+    system relies on to correct itself.
+    \speak{Engineer} Sure, but they take a lot of time to fix, and I don't have the bandwidth.
+    \speak{FACILITATOR} So, let's dig into that and see if we can automate\ldots
+\end{dialogue}
+
+\subsection{A transformational solution}
+
+What happened in this dialogue?
+Early on the topic of instability surfaced.
+A system can be in a stable state or an unstable one, and they often constantly move between the two.
+This unstable state was seen as an insurmountable problem at first.
+Both the engineer and the lawyer did not realize they had already produced a prototype of their future solution.
+They had also not accepted the instability as an inherent part of their solution domain.
+We don't tend to think of errors as solutions, but they're really two sides of the same coin.
+
+The facilitator takes a more neutral stands towards errors and presents that the problem has already been solved.
+The core of the proposition is to embed the errors as part of the system design.
+Eventually the team would go on to produce a more elaborate document editor that tracks manual corrections and can
+communicate with the lawyer where more information is needed.
+For this purpose, the collected data is mapped onto actions by using a machine learning technique (decision trees).
+The decision tree can tell when a valid state cannot be unambiguously be generated, which is when it can present
+examples of situations to disambiguate.
+The lawyer can then enter the question that needs to query for useful data to determine how to draft the document.
+Each time an error is flagged, the decision tree is retrained.
+When the law changes, older documents can be removed from the dataset and are no longer trained with.
+A decision tree can also be inspected to verify the logic applied to arrive at a decision, allowing the lawyer to
+correct system mistakes manually without intervention from the engineer.
+
+Thought-forms are developmental.
+Both the engineer were not able to access the needed thought-form, TF-23, 'value of conflict leading in a
+developmental direction'.
+This thought-form looks at conflict as a beneficial factor, rather than a disturbance.
+Dialectical engineering is the practice where we gradually acquaint ourselves with all 28 thought forms as defined by
+Laske~\citep{laske_2023_4_moments}, or a simplified set of 12 described by Basseches~\citep{shannon_metathinking}.
+This then develops a catalogue of perspectives that enables us to escape into when we are stuck in our own thinking.
+Much like a painter steps away from a piece to get a fresh look, we need to step away from our thinking to gain
+perspective.

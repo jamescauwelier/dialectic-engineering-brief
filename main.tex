@@ -49,11 +49,14 @@
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH] \THEYEAR}
+
 \usepackage{fancyhdr} % Headers and footers
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyhead[C]{Dialectic Engineering: an invitation to think deeply $\bullet$ \monthyear\today  } % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -68,11 +71,11 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Your fancy paper title} % Article title
+\title{Dialectic Engineering: an invitation to think deeply} % Article title
 \author{%
-\textsc{John Smith} \\[1ex] % Your name
-\normalsize Your fancy institution \\ % Your institution
-\normalsize \href{mailto:john@smith.com}{john@smith.com} % Your email address
+\textsc{James Cauwelier} \\[1ex] % Your name
+%\normalsize Your fancy institution \\ % Your institution
+\normalsize \href{mailto:james@accelerated.dev}{james@accelerated.dev} % Your email address
 %\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
 %\textsc{Jane Smith}\thanks{Corresponding author} \\[1ex] % Second author's name
 %\normalsize University of Utah \\ % Second author's institution
@@ -80,10 +83,14 @@
 }
 \date{\today} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
-\begin{abstract}
-\noindent \blindtext
-\end{abstract}
+  \input{./sections/abstract}
 }
+
+\usepackage{cite}
+\usepackage[numbers]{natbib}
+\usepackage{dialogue}
+
+\setlength{\parskip}{1em}
 
 %----------------------------------------------------------------------------------------
 
@@ -96,45 +103,18 @@
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
-\section{Introduction}
-
-\blindtext
-
-\blindtext
-
-\section{Definitions}
-
-\blindtext
-
-\blindtext
-
-%------------------------------------------------
-
-\section{Methods}
-
-Some random text \footnote{Example footnote}, and more random text:
-
-\begin{itemize}
-\item Item 1 \cite{Figueredo:2009dg}
-\item Item 2
-\item Item 3
-\end{itemize}
-
-
+\input{./sections/introduction}
+\input{./sections/deliberately-developmental}
+\input{./sections/mind-stretching}
+\input{./sections/benefits}
+\input{./sections/conclusion}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-\newblock Assortative pairing and life history strategy - a cross-cultural
-  study.
-\newblock {\em Human Nature}, 20:317--330.
-
-\end{thebibliography}
+\bibliographystyle{plainnat} % Choose a bibliography style
+\bibliography{references} % Include the BibTeX file
 
 %----------------------------------------------------------------------------------------
 
